@@ -1,0 +1,26 @@
+===================
+Must Do
+===================
+Menu 
+at least one level
+platforms
+enemies
+character must move, die, jump
+one fully functional level
+===================
+Should Do
+===================
+music 
+nice sprites
+some entrance story pannels
+some death/win story pannels
+5 or more levels all unique and more difficult
+power ups/obsticalls
+point system
+===================
+Could Do
+===================
+changing music between levels and menu
+story elemtns in game play
+more power ups
+more levels
