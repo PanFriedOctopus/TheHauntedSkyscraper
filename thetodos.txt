@@ -2,15 +2,16 @@
 Must Do
 ===================
 Menu 
-at least one level
+key object must be colectable
+door to end must be closable and openable
+character must move jump, die
 platforms
-enemies
-character must move, die, jump
-one fully functional level
+at least one level
 ===================
 Should Do
 ===================
 music 
+eneimes
 nice sprites
 some entrance story pannels
 some death/win story pannels
