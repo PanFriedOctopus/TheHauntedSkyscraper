@@ -20,7 +20,10 @@ class Character extends Sprite
 	var JumpCount:Int;
 	var imgl:Bitmap;
 	var imgr:Bitmap;
+	var imglk:Bitmap;
+	var imgrk:Bitmap;
 	var img:BitmapData;
+	var hasKey:Bool;
 	public var sprite:Sprite;
 	var b:Bool;
 	var count:Int;
@@ -32,6 +35,8 @@ class Character extends Sprite
 		sprite = new Sprite();
 		imgl = new Bitmap(Assets.getBitmapData("img/catleft.png"));
 		imgr = new Bitmap(Assets.getBitmapData("img/catright.png"));
+		imglk = new Bitmap(Assets.getBitmapData("img/catleftkey.png"));
+		imgrk = new Bitmap(Assets.getBitmapData("img/catrightkey.png"));
 		img = Assets.getBitmapData("img/cat.png");
 		sprite.addChild(imgr);
 		this.addChild(sprite);
@@ -46,6 +51,8 @@ class Character extends Sprite
 		vy = 0;
 		JumpCount = 0;
 		count = 0;
+		hasKey = Main.game.doeshavekey();
+		//dead = false;
 		
 	}
 	
@@ -53,13 +60,16 @@ class Character extends Sprite
 	{
 		this.vx -= .2;
 		sprite.removeChildAt(0);
-		sprite.addChild(imgl);
+		if (hasKey) sprite.addChild(imglk);
+		else sprite.addChild(imgl);
 	}
 	public function right()
 	{
+		
 		this.vx += .2;
 		sprite.removeChildAt(0);
-		sprite.addChild(imgr);
+		if (hasKey) sprite.addChild(imgrk);
+		else sprite.addChild(imgr);
 	}
 	public function jump()
 	{
@@ -107,6 +117,7 @@ class Character extends Sprite
 	
 	public function act()
 	{
+		hasKey = Main.game.doeshavekey();
 		//try to animate idk
 		count = count +1;
 		this.graphics.clear();

@@ -40,16 +40,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catleft.png", __ASSET__img_catleft_png);
 		type.set ("img/catleft.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/catleftkey.png", __ASSET__img_catleftkey_png);
+		type.set ("img/catleftkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catright.png", __ASSET__img_catright_png);
 		type.set ("img/catright.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/catrightkey.png", __ASSET__img_catrightkey_png);
+		type.set ("img/catrightkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Character.png", __ASSET__img_character_png);
 		type.set ("img/Character.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/death.png", __ASSET__img_death_png);
+		type.set ("img/death.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/door.png", __ASSET__img_door_png);
 		type.set ("img/door.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/gameover.png", __ASSET__img_gameover_png);
 		type.set ("img/gameover.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/ghost.png", __ASSET__img_ghost_png);
+		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/key.png", __ASSET__img_key_png);
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/win.png", __ASSET__img_win_png);
+		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -58,16 +68,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catleft.png", "img/catleft.png");
 		type.set ("img/catleft.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/catleftkey.png", "img/catleftkey.png");
+		type.set ("img/catleftkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catright.png", "img/catright.png");
 		type.set ("img/catright.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/catrightkey.png", "img/catrightkey.png");
+		type.set ("img/catrightkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Character.png", "img/Character.png");
 		type.set ("img/Character.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/death.png", "img/death.png");
+		type.set ("img/death.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/door.png", "img/door.png");
 		type.set ("img/door.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/gameover.png", "img/gameover.png");
 		type.set ("img/gameover.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/ghost.png", "img/ghost.png");
+		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/key.png", "img/key.png");
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/win.png", "img/win.png");
+		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#else
@@ -513,14 +533,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 class __ASSET__img_cat_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catleft_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_catleftkey_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catright_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_catrightkey_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_character_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_death_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_door_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_gameover_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_ghost_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_key_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_win_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
+
+
+
+
 
 
 

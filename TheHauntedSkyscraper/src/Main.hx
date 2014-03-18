@@ -23,19 +23,22 @@ class Main extends Sprite
 {
 	var inited:Bool;
 	public var gameover:Sprite;
+	public var winimg:Sprite;
 	var countframe:Int;
 	public static var game:Main;
 	public var character:Character;
+	public var E1:Ghost;
 	public var level1:Level_One;
 	var keys:Array<Int>;
 	public var key:Key;
 	public var door:Door;
 	public var platforms:Array<Platform>;
-	var haskey:Bool;
+	public var haskey:Bool;
 	var win:Bool;
 	var loose:Bool;
 	var stopscroll:Bool;
 	public var charay:Float;
+	public var dead:Bool;
 
 	/* ENTRY POINT */
 	
@@ -121,14 +124,20 @@ class Main extends Sprite
 		loose = false;
 		stopscroll = false;
 		charay = 0;
+		dead = false;
 		
 		//Character creation
 		character = new Character();
 		this.addChild(character);
+		E1 = new Ghost(200, 200);
+		this.addChild(E1);
+		
 		
 		//Game Over Screen
 		gameover = new Sprite();
-		gameover.addChild(new Bitmap(Assets.getBitmapData("img/gameover.png")));
+		gameover.addChild(new Bitmap(Assets.getBitmapData("img/death.png")));
+		winimg = new Sprite();
+		winimg.addChild(new Bitmap(Assets.getBitmapData("img/win.png")));
 		
 		
 		//Keys
@@ -140,12 +149,21 @@ class Main extends Sprite
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, action);
 	}
 	
+	public function doeshavekey():Bool
+	{
+		if (haskey == true) return true;
+		else return false;
+	}
+	
 	function processKey(e:KeyboardEvent)
 	{
-		if (! keyCheck(e.keyCode)) keys.push(e.keyCode);
-		if (e.keyCode == 37) character.left();
-		if (e.keyCode == 39) character.right();
-		if (e.keyCode == 38) character.jump();
+		if (stopscroll == false)
+		{
+			if (! keyCheck(e.keyCode)) keys.push(e.keyCode);
+			if (e.keyCode == 37) character.left();
+			if (e.keyCode == 39) character.right();
+			if (e.keyCode == 38) character.jump();
+		}
 	}
 	function processUpKey(e:KeyboardEvent)
 	{
@@ -171,11 +189,16 @@ class Main extends Sprite
 		#end
 	}
 	
+	function removeCharacter()
+	{
+		this.removeChild(character);
+	}
+	
 	function winlevel()
 	{
-		this.addChild(gameover);
-		gameover.x = character.x-100;
-		gameover.y = character.y-200;
+		this.addChild(winimg);
+		winimg.x = door.x+85;
+		winimg.y = door.y-30;
 		haskey = false;
 	}
 	
@@ -185,8 +208,9 @@ class Main extends Sprite
 		{
 			stopscroll = true;
 			this.addChild(gameover);
-			gameover.x = character.x;
-			gameover.y = 520;
+			gameover.x = character.x+25;
+			gameover.y = 1025;
+			//removeCharacter();
 		}
 	}
 	
