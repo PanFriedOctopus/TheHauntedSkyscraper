@@ -38,6 +38,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("img/cat.png", __ASSET__img_cat_png);
 		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/catdead.png", __ASSET__img_catdead_png);
+		type.set ("img/catdead.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catleft.png", __ASSET__img_catleft_png);
 		type.set ("img/catleft.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catleftkey.png", __ASSET__img_catleftkey_png);
@@ -60,12 +62,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/win.png", __ASSET__img_win_png);
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("audio/Breathing_Cyborg.mp3", __ASSET__audio_breathing_cyborg_mp3);
+		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		
 		
 		#elseif html5
 		
 		path.set ("img/cat.png", "img/cat.png");
 		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/catdead.png", "img/catdead.png");
+		type.set ("img/catdead.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catleft.png", "img/catleft.png");
 		type.set ("img/catleft.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catleftkey.png", "img/catleftkey.png");
@@ -88,6 +94,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/win.png", "img/win.png");
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("audio/Breathing_Cyborg.mp3", "audio/Breathing_Cyborg.mp3");
+		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		
 		
 		#else
@@ -532,6 +540,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif flash
 
 class __ASSET__img_cat_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_catdead_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catleft_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catleftkey_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catright_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -543,9 +552,12 @@ class __ASSET__img_gameover_png extends flash.display.BitmapData { public functi
 class __ASSET__img_ghost_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_key_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_win_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__audio_breathing_cyborg_mp3 extends flash.media.Sound { }
 
 
 #elseif html5
+
+
 
 
 

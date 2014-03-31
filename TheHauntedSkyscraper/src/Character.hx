@@ -22,8 +22,10 @@ class Character extends Sprite
 	var imgr:Bitmap;
 	var imglk:Bitmap;
 	var imgrk:Bitmap;
+	var imgd:Bitmap;
 	var img:BitmapData;
 	var hasKey:Bool;
+	var dead:Bool;
 	public var sprite:Sprite;
 	var b:Bool;
 	var count:Int;
@@ -37,6 +39,7 @@ class Character extends Sprite
 		imgr = new Bitmap(Assets.getBitmapData("img/catright.png"));
 		imglk = new Bitmap(Assets.getBitmapData("img/catleftkey.png"));
 		imgrk = new Bitmap(Assets.getBitmapData("img/catrightkey.png"));
+		imgd = new Bitmap(Assets.getBitmapData("img/catdead.png"));
 		img = Assets.getBitmapData("img/cat.png");
 		sprite.addChild(imgr);
 		this.addChild(sprite);
@@ -58,25 +61,33 @@ class Character extends Sprite
 	
 	public function left()
 	{
-		this.vx -= .2;
-		sprite.removeChildAt(0);
-		if (hasKey) sprite.addChild(imglk);
-		else sprite.addChild(imgl);
+		if (dead == false)
+		{
+			this.vx -= .2;
+			sprite.removeChildAt(0);
+			if (hasKey) sprite.addChild(imglk);
+			else sprite.addChild(imgl);
+		}
 	}
 	public function right()
 	{
-		
-		this.vx += .2;
-		sprite.removeChildAt(0);
-		if (hasKey) sprite.addChild(imgrk);
-		else sprite.addChild(imgr);
+		if (dead == false)
+		{
+			this.vx += .2;
+			sprite.removeChildAt(0);
+			if (hasKey) sprite.addChild(imgrk);
+			else sprite.addChild(imgr);
+		}
 	}
 	public function jump()
 	{
-		if (JumpCount < 2)
+		if (dead == false)
 		{
-			this.vy = -4;
-			JumpCount += 1;
+			if (JumpCount < 2)
+			{
+				this.vy = -4;
+				JumpCount += 1;
+			}
 		}
 	}
 	
@@ -92,7 +103,23 @@ class Character extends Sprite
 		}
 		return false;
 	}
-	
+	public function attacked()
+	{
+		for (ghost in Main.game.ghosts)
+		{
+			if (this.hitTestObject(ghost))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	public function die()
+	{
+		dead =  true;
+		sprite.removeChildAt(0);
+		sprite.addChild(imgd);
+	}
 	public function collectkey()
 	{
 		if (this.hitTestObject(Main.game.key))

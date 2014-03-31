@@ -25,8 +25,10 @@ class Main extends Sprite
 	public var gameover:Sprite;
 	public var winimg:Sprite;
 	var countframe:Int;
+	var count:Int;
 	public static var game:Main;
 	public var character:Character;
+	public var ghosts:Array<Ghost>;
 	public var E1:Ghost;
 	public var level1:Level_One;
 	var keys:Array<Int>;
@@ -70,6 +72,7 @@ class Main extends Sprite
 		super();
 		game = this;
 		platforms = new Array<Platform>();
+		ghosts = new Array<Ghost>();
 		addEventListener(Event.ADDED_TO_STAGE, added);
 	}
 	public function Level_1()
@@ -106,6 +109,15 @@ class Main extends Sprite
 		platforms.push(p);
 		this.addChild(p);
 		
+		var g = new Ghost(250, 250);
+		ghosts.push(g);
+		this.addChild(g);
+		var g = new Ghost(0, 0);
+		ghosts.push(g);
+		this.addChild(g);
+		var g = new Ghost(500, 500);
+		ghosts.push(g);
+		this.addChild(g);
 		key = new Key(905, -205);
 		this.addChild(key);
 		door = new Door(2200, 355);
@@ -114,6 +126,10 @@ class Main extends Sprite
 	
 	public function construction()
 	{
+		//Character creation
+		character = new Character();
+		this.addChild(character);
+		
 		//Level construction
 		Level_1();
 		
@@ -124,13 +140,8 @@ class Main extends Sprite
 		loose = false;
 		stopscroll = false;
 		charay = 0;
-		dead = false;
-		
-		//Character creation
-		character = new Character();
-		this.addChild(character);
-		E1 = new Ghost(200, 200);
-		this.addChild(E1);
+		dead = false; 
+		count = 0;
 		
 		
 		//Game Over Screen
@@ -162,8 +173,9 @@ class Main extends Sprite
 			if (! keyCheck(e.keyCode)) keys.push(e.keyCode);
 			if (e.keyCode == 37) character.left();
 			if (e.keyCode == 39) character.right();
-			if (e.keyCode == 38) character.jump();
+			if (e.keyCode == 38 || e.keyCode == 32) character.jump();
 		}
+		trace(e.keyCode);
 	}
 	function processUpKey(e:KeyboardEvent)
 	{
@@ -216,7 +228,26 @@ class Main extends Sprite
 	
 	public function action(e)
 	{
+		if (character.attacked() == true)
+		{
+			for (ghost in ghosts)
+			{
+				ghost.killed();				
+			}
+			character.die();
+			this.addChild(gameover);
+			gameover.x = character.x+25;
+			gameover.y = character.y-25;
+		}
+		//count++;
 		character.act();
+		for (ghost in ghosts)
+		{
+			ghost.desitnation(character.x, character.y);
+			ghost.act();
+		}
+		//count = 0;
+		
 		countframe++;
 		if (stopscroll == false)
 		{
