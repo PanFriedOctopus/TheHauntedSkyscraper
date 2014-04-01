@@ -60,10 +60,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/key.png", __ASSET__img_key_png);
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/mainmenu.png", __ASSET__img_mainmenu_png);
+		type.set ("img/mainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/mmplay.png", __ASSET__img_mmplay_png);
+		type.set ("img/mmplay.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/mmscores.png", __ASSET__img_mmscores_png);
+		type.set ("img/mmscores.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/replaylevel.png", __ASSET__img_replaylevel_png);
+		type.set ("img/replaylevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/win.png", __ASSET__img_win_png);
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("audio/Breathing_Cyborg.mp3", __ASSET__audio_breathing_cyborg_mp3);
 		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		className.set ("audio/Breathing_Cyborg.wav", __ASSET__audio_breathing_cyborg_wav);
+		type.set ("audio/Breathing_Cyborg.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -92,10 +102,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/key.png", "img/key.png");
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/mainmenu.png", "img/mainmenu.png");
+		type.set ("img/mainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/mmplay.png", "img/mmplay.png");
+		type.set ("img/mmplay.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/mmscores.png", "img/mmscores.png");
+		type.set ("img/mmscores.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/replaylevel.png", "img/replaylevel.png");
+		type.set ("img/replaylevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/win.png", "img/win.png");
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("audio/Breathing_Cyborg.mp3", "audio/Breathing_Cyborg.mp3");
 		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		path.set ("audio/Breathing_Cyborg.wav", "audio/Breathing_Cyborg.wav");
+		type.set ("audio/Breathing_Cyborg.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		
 		
 		#else
@@ -551,11 +571,21 @@ class __ASSET__img_door_png extends flash.display.BitmapData { public function n
 class __ASSET__img_gameover_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_ghost_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_key_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_mainmenu_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_mmplay_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_mmscores_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_replaylevel_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_win_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__audio_breathing_cyborg_mp3 extends flash.media.Sound { }
+class __ASSET__audio_breathing_cyborg_wav extends flash.media.Sound { }
 
 
 #elseif html5
+
+
+
+
+
 
 
 

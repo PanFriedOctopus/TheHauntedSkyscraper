@@ -1,18 +1,23 @@
 package ;
 
-import openfl.Assets;
-import flash.Lib;
 import flash.display.Sprite;
-import flash.display.Bitmap;
-import flash.display.BitmapData;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.events.KeyboardEvent;
-import flash.media.SoundChannel;
+import flash.Lib;
+import flash.display.BitmapData;
+import flash.display.Bitmap;
 import flash.media.Sound;
-import flash.media.SoundTransform;
+import flash.net.URLRequest;
+import flash.text.TextField;
+import flash.text.TextFormat;
+import openfl.Assets;
 import motion.Actuate;
-import motion.easing.Elastic;
+import flash.media.Sound;
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
 
 /**
  * ...
@@ -22,25 +27,36 @@ import motion.easing.Elastic;
 class Main extends Sprite 
 {
 	var inited:Bool;
-	public var gameover:Sprite;
-	public var winimg:Sprite;
-	var countframe:Int;
-	var count:Int;
-	public static var game:Main;
-	public var character:Character;
-	public var ghosts:Array<Ghost>;
-	public var E1:Ghost;
-	public var level1:Level_One;
-	var keys:Array<Int>;
-	public var key:Key;
-	public var door:Door;
-	public var platforms:Array<Platform>;
-	public var haskey:Bool;
+	
 	var win:Bool;
 	var loose:Bool;
 	var stopscroll:Bool;
-	public var charay:Float;
 	public var dead:Bool;
+	public var haskey:Bool;
+	
+	public static var game:Main;
+	public var level:String;
+	
+	var countframe:Int;
+	var count:Int;
+	var keys:Array<Int>;
+	
+	public var charay:Float;
+	
+	public var gameover:Sprite;
+	public var winimg:Sprite;
+	public var deadmenu:Sprite;
+	public var mainmenu:Sprite;
+	public var playbutton:Sprite;
+	public var retrybutton:Sprite;
+	public var returntommbutton:Sprite;
+	
+	public var character:Character;
+	public var key:Key;
+	public var door:Door;
+	public var level1:Level_One;
+	public var ghosts:Array<Ghost>;
+	public var platforms:Array<Platform>;	
 
 	/* ENTRY POINT */
 	
@@ -54,7 +70,27 @@ class Main extends Sprite
 	{
 		if (inited) return;
 		inited = true;
-		construction();
+		//menu sprite
+		mainmenu = new Sprite();
+		var menu = new Bitmap(Assets.getBitmapData("img/mainmenu.png"));
+		mainmenu.addChild(menu);
+		
+		//play button
+		/*Add play button*/		
+		playbutton = new Sprite();
+		var playButtonIcon = new Bitmap(Assets.getBitmapData("img/mmplay.png"));
+		playbutton.addChild(playButtonIcon);
+		mainmenu.addChild(playbutton);
+		playbutton.x = 50;
+		playbutton.y = 290;
+		
+		//Add event listeners
+		playbutton.addEventListener(MouseEvent.MOUSE_DOWN, playGame);
+		
+		this.addChild(mainmenu);
+		//construction();
+		//var song = Assets.getSound("audio/Breathing_Cyborg.wav");
+		//song.play();
 
 		// (your code here)
 		
@@ -75,8 +111,14 @@ class Main extends Sprite
 		ghosts = new Array<Ghost>();
 		addEventListener(Event.ADDED_TO_STAGE, added);
 	}
+	public function playGame(e:MouseEvent) 
+	{
+		this.removeChild(mainmenu);
+		construction();
+	}
 	public function Level_1()
 	{
+		
 		var p = new Platform(10, 400, 600, 10);
 		platforms.push(p);
 		this.addChild(p);
@@ -150,6 +192,21 @@ class Main extends Sprite
 		winimg = new Sprite();
 		winimg.addChild(new Bitmap(Assets.getBitmapData("img/win.png")));
 		
+		deadmenu = new Sprite();
+		deadmenu.graphics.beginFill(0x000000, .25);
+		deadmenu.graphics.drawRect(0, 0, 800, 480);
+		var d = new Bitmap(Assets.getBitmapData("img/replaylevel.png"));
+		deadmenu.addChild(d);
+		d.x = 560;
+		d.y = 350;
+		//deadmenu.addChild(quitgame);
+		//quitgame.y = 350;
+		
+		//buttons
+		retrybutton = new Sprite();
+		retrybutton.addChild(new Bitmap(Assets.getBitmapData("img/retry.png")));
+		returntommbutton = new Sprite();
+		returntommbutton.addChildnew Bitmap(Assets.getBitmapData("img/mainmenu.png")));
 		
 		//Keys
 		keys = new Array<Int>();
@@ -158,6 +215,19 @@ class Main extends Sprite
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, processKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, processUpKey);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, action);
+		retrybutton.addEventListener(MouseEvent.MOUSE_DOWN, retry_mouse);
+		returntommbutton.addEventListener(MouseEvent.MOUSE_DOWN, returntomm_mouse);
+	}
+	
+	public function retry_mouse(e:MouseEvent)
+	{
+		while (this.numChildren > 0) this.removeChildAt(0);
+		nextlevelcreation();
+	}
+	public function returntomm_mouse(e:MouseEvent)
+	{
+		while (this.numChildren > 0) this.removeChildAt(0);
+		quitthegame();
 	}
 	
 	public function doeshavekey():Bool
