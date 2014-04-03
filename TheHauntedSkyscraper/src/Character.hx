@@ -1,11 +1,24 @@
 package ;
 
-import flash.display.Sprite;
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.Lib;
-import openfl.Assets;
 import flash.geom.Matrix;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.events.KeyboardEvent;
+import flash.Lib;
+import flash.display.BitmapData;
+import flash.display.Bitmap;
+import flash.media.Sound;
+import flash.net.URLRequest;
+import flash.text.TextField;
+import flash.text.TextFormat;
+import openfl.Assets;
+import motion.Actuate;
+import flash.media.Sound;
+import flash.media.SoundChannel;
+import flash.media.SoundTransform;
+import flash.events.IOErrorEvent;
+import flash.events.ProgressEvent;
 
 /**
  * ...
@@ -25,12 +38,13 @@ class Character extends Sprite
 	var imgd:Bitmap;
 	var img:BitmapData;
 	var hasKey:Bool;
-	var dead:Bool;
+	
+	public var dead:Bool;
 	public var sprite:Sprite;
 	var b:Bool;
 	var count:Int;
 	
-	public function new() 
+	public function new(x,y) 
 	{
 		super();
 		//Adding Image
@@ -40,11 +54,11 @@ class Character extends Sprite
 		imglk = new Bitmap(Assets.getBitmapData("img/catleftkey.png"));
 		imgrk = new Bitmap(Assets.getBitmapData("img/catrightkey.png"));
 		imgd = new Bitmap(Assets.getBitmapData("img/catdead.png"));
-		img = Assets.getBitmapData("img/cat.png");
+		//img = Assets.getBitmapData("img/cat.png");
 		sprite.addChild(imgr);
 		this.addChild(sprite);
-		this.x = 200;
-		this.y = 200;
+		this.x = x;
+		this.y = y;
 		this.hitArea = sprite;
 		
 		//Space for Declaring start varibles
@@ -87,6 +101,8 @@ class Character extends Sprite
 			{
 				this.vy = -4;
 				JumpCount += 1;
+				var song = Assets.getSound("audio/jump.wav");
+				song.play();
 			}
 		}
 	}
@@ -109,6 +125,8 @@ class Character extends Sprite
 		{
 			if (this.hitTestObject(ghost))
 			{
+				var song1 = Assets.getSound("audio/hurt.wav");
+				song1.play();
 				return true;
 			}
 		}
@@ -124,6 +142,8 @@ class Character extends Sprite
 	{
 		if (this.hitTestObject(Main.game.key))
 		{
+			var song1 = Assets.getSound("audio/getkey.wav");
+			song1.play();
 			return true;
 		}
 		return false;
@@ -132,6 +152,8 @@ class Character extends Sprite
 	{
 		if (this.hitTestObject(Main.game.door))
 		{
+			//var song2 = Assets.getSound("audio/opendoor.wav");
+			//song2.play();
 			return true;
 		}
 		return false;
@@ -142,6 +164,10 @@ class Character extends Sprite
 		this.y = yl;
 	}
 	
+	public function live()
+	{
+		dead = false;
+	}
 	public function act()
 	{
 		hasKey = Main.game.doeshavekey();

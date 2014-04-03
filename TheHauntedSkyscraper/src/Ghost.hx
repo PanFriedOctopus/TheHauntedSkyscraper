@@ -55,11 +55,11 @@ class Ghost extends Sprite
 			nowdis = Math.sqrt(((desx - orix) * (desx - orix)) + ((desy - oriy) * (desy - oriy)));
 			if (nowdis < pastdis)
 			{
-				speed = speed + .0001;
+				speed = speed + .01;
 			}
 			else 
 			{
-				speed = speed + .001;
+				speed = speed - .009;
 			}
 			pastdis = nowdis;
 			var a = Math.atan2(desy - oriy, desx - orix);

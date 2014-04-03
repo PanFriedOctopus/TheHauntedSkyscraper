@@ -36,8 +36,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		className.set ("img/cat.png", __ASSET__img_cat_png);
-		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catdead.png", __ASSET__img_catdead_png);
 		type.set ("img/catdead.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catleft.png", __ASSET__img_catleft_png);
@@ -48,38 +46,54 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/catright.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/catrightkey.png", __ASSET__img_catrightkey_png);
 		type.set ("img/catrightkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/Character.png", __ASSET__img_character_png);
-		type.set ("img/Character.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/death.png", __ASSET__img_death_png);
 		type.set ("img/death.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/door.png", __ASSET__img_door_png);
 		type.set ("img/door.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/gameover.png", __ASSET__img_gameover_png);
-		type.set ("img/gameover.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/ghost.png", __ASSET__img_ghost_png);
 		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/key.png", __ASSET__img_key_png);
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/mainmenu.png", __ASSET__img_mainmenu_png);
-		type.set ("img/mainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/mmplay.png", __ASSET__img_mmplay_png);
 		type.set ("img/mmplay.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/mmscores.png", __ASSET__img_mmscores_png);
 		type.set ("img/mmscores.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/replaylevel.png", __ASSET__img_replaylevel_png);
-		type.set ("img/replaylevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/nextlevel.png", __ASSET__img_nextlevel_png);
+		type.set ("img/nextlevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/no.png", __ASSET__img_no_png);
+		type.set ("img/no.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/retry.png", __ASSET__img_retry_png);
+		type.set ("img/retry.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/themainmenu.png", __ASSET__img_themainmenu_png);
+		type.set ("img/themainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/win.png", __ASSET__img_win_png);
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("audio/Breathing_Cyborg.mp3", __ASSET__audio_breathing_cyborg_mp3);
-		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
-		className.set ("audio/Breathing_Cyborg.wav", __ASSET__audio_breathing_cyborg_wav);
-		type.set ("audio/Breathing_Cyborg.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("img/yes.png", __ASSET__img_yes_png);
+		type.set ("img/yes.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("audio/buttontouch.wav", __ASSET__audio_buttontouch_wav);
+		type.set ("audio/buttontouch.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("audio/getkey.wav", __ASSET__audio_getkey_wav);
+		type.set ("audio/getkey.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("audio/hurt.wav", __ASSET__audio_hurt_wav);
+		type.set ("audio/hurt.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("audio/jump.wav", __ASSET__audio_jump_wav);
+		type.set ("audio/jump.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("audio/opendoor.wav", __ASSET__audio_opendoor_wav);
+		type.set ("audio/opendoor.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("audio/Out_of_Sight_Into_the_Mind.mp3", __ASSET__audio_out_of_sight_into_the_mind_mp3);
+		type.set ("audio/Out_of_Sight_Into_the_Mind.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		className.set ("leveltext/level1.txt", __ASSET__leveltext_level1_txt);
+		type.set ("leveltext/level1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("leveltext/level2.txt", __ASSET__leveltext_level2_txt);
+		type.set ("leveltext/level2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("leveltext/test.txt", __ASSET__leveltext_test_txt);
+		type.set ("leveltext/test.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("leveltext/testlevel.txt", __ASSET__leveltext_testlevel_txt);
+		type.set ("leveltext/testlevel.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
 		
 		#elseif html5
 		
-		path.set ("img/cat.png", "img/cat.png");
-		type.set ("img/cat.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catdead.png", "img/catdead.png");
 		type.set ("img/catdead.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catleft.png", "img/catleft.png");
@@ -90,32 +104,50 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/catright.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/catrightkey.png", "img/catrightkey.png");
 		type.set ("img/catrightkey.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/Character.png", "img/Character.png");
-		type.set ("img/Character.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/death.png", "img/death.png");
 		type.set ("img/death.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/door.png", "img/door.png");
 		type.set ("img/door.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/gameover.png", "img/gameover.png");
-		type.set ("img/gameover.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/ghost.png", "img/ghost.png");
 		type.set ("img/ghost.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/key.png", "img/key.png");
 		type.set ("img/key.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/mainmenu.png", "img/mainmenu.png");
-		type.set ("img/mainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/mmplay.png", "img/mmplay.png");
 		type.set ("img/mmplay.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/mmscores.png", "img/mmscores.png");
 		type.set ("img/mmscores.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/replaylevel.png", "img/replaylevel.png");
-		type.set ("img/replaylevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/nextlevel.png", "img/nextlevel.png");
+		type.set ("img/nextlevel.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/no.png", "img/no.png");
+		type.set ("img/no.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/retry.png", "img/retry.png");
+		type.set ("img/retry.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/themainmenu.png", "img/themainmenu.png");
+		type.set ("img/themainmenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/win.png", "img/win.png");
 		type.set ("img/win.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("audio/Breathing_Cyborg.mp3", "audio/Breathing_Cyborg.mp3");
-		type.set ("audio/Breathing_Cyborg.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
-		path.set ("audio/Breathing_Cyborg.wav", "audio/Breathing_Cyborg.wav");
-		type.set ("audio/Breathing_Cyborg.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("img/yes.png", "img/yes.png");
+		type.set ("img/yes.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("audio/buttontouch.wav", "audio/buttontouch.wav");
+		type.set ("audio/buttontouch.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("audio/getkey.wav", "audio/getkey.wav");
+		type.set ("audio/getkey.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("audio/hurt.wav", "audio/hurt.wav");
+		type.set ("audio/hurt.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("audio/jump.wav", "audio/jump.wav");
+		type.set ("audio/jump.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("audio/opendoor.wav", "audio/opendoor.wav");
+		type.set ("audio/opendoor.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("audio/Out_of_Sight_Into_the_Mind.mp3", "audio/Out_of_Sight_Into_the_Mind.mp3");
+		type.set ("audio/Out_of_Sight_Into_the_Mind.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		path.set ("leveltext/level1.txt", "leveltext/level1.txt");
+		type.set ("leveltext/level1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("leveltext/level2.txt", "leveltext/level2.txt");
+		type.set ("leveltext/level2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("leveltext/test.txt", "leveltext/test.txt");
+		type.set ("leveltext/test.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("leveltext/testlevel.txt", "leveltext/testlevel.txt");
+		type.set ("leveltext/testlevel.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
 		
 		#else
@@ -559,28 +591,44 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
-class __ASSET__img_cat_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catdead_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catleft_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catleftkey_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catright_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_catrightkey_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__img_character_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_death_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_door_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__img_gameover_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_ghost_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_key_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__img_mainmenu_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_mmplay_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_mmscores_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__img_replaylevel_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_nextlevel_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_no_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_retry_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_themainmenu_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_win_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__audio_breathing_cyborg_mp3 extends flash.media.Sound { }
-class __ASSET__audio_breathing_cyborg_wav extends flash.media.Sound { }
+class __ASSET__img_yes_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__audio_buttontouch_wav extends flash.media.Sound { }
+class __ASSET__audio_getkey_wav extends flash.media.Sound { }
+class __ASSET__audio_hurt_wav extends flash.media.Sound { }
+class __ASSET__audio_jump_wav extends flash.media.Sound { }
+class __ASSET__audio_opendoor_wav extends flash.media.Sound { }
+class __ASSET__audio_out_of_sight_into_the_mind_mp3 extends flash.media.Sound { }
+class __ASSET__leveltext_level1_txt extends flash.utils.ByteArray { }
+class __ASSET__leveltext_level2_txt extends flash.utils.ByteArray { }
+class __ASSET__leveltext_test_txt extends flash.utils.ByteArray { }
+class __ASSET__leveltext_testlevel_txt extends flash.utils.ByteArray { }
 
 
 #elseif html5
+
+
+
+
+
+
+
+
 
 
 
