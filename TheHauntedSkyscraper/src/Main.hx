@@ -290,7 +290,7 @@ class Main extends Sprite
 	}
 	public function retry()
 	{
-		//trace("hey");
+		/*trace("hey");
 		while(ghosts.length>0)
 		{
 			g = ghosts.pop();
@@ -301,10 +301,10 @@ class Main extends Sprite
 			this.removeChildAt(0);
 		}
 		this.x = 0;
-		this.y = 0;
+		this.y = 0;*/
 		this.addChild(deadmenu);
-		deadmenu.x = 760;
-		deadmenu.y = 25;
+		deadmenu.x = this.x + 760;
+		deadmenu.y = this.y + 25;
 	}
 	public function yesretry_mouse(e:MouseEvent) //works for level 1
 	{
